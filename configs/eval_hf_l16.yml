@@ -1,0 +1,31 @@
+name: minit2i_l16_hf_eval
+train_config: configs/finetune.yml
+hf_model_id: MiniT2I/MiniT2I
+model_type: l16
+output_dir: ${T2I_EVAL_OUTPUT_ROOT}/minit2i_l16_hf
+python: ${T2I_PYTHON}
+geneval_python: ${T2I_GENEVAL_PYTHON}
+dpg_python: ${T2I_DPG_PYTHON}
+nproc: 1
+
+benchmarks:
+  fid:
+    enabled: false
+  geneval:
+    enabled: true
+    generate: true
+    evaluate: true
+    samples_per_prompt: 4
+    batch_size: 4
+    cfg_scale: 5.0
+    metadata: ${T2I_GENEVAL_METADATA}
+    model_path: ${T2I_GENEVAL_MODEL_ROOT}
+  dpg:
+    enabled: true
+    generate: true
+    evaluate: true
+    samples_per_prompt: 4
+    batch_size: 4
+    data: ${T2I_DPG_BENCH_DATA}
+    mplug_ckpt: ${T2I_DPG_MPLUG_CKPT}
+    resolution: 512

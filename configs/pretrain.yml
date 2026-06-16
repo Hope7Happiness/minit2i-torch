@@ -1,0 +1,51 @@
+run_name: mmdit-b32-cc12m-pretrain
+output_dir: ${T2I_OUTPUT_ROOT}/mmdit_b32_cc12m_pretrain
+
+dataset_backend: local_folder
+local_dataset_dir: ${T2I_CC12M_TENSOR_ROOT}
+
+image_size: 512
+prompt_length: 256
+num_workers: 1
+dataloader_prefetch: 2
+shuffle_buffer: 1000
+
+t5_name: google/flan-t5-large
+patch_size: 32
+hidden_size: 768
+text_hidden_size: 768
+t5_hidden_size: 1024
+depth_double: 17
+text_preamble_depth: 2
+num_heads: 12
+head_dim: 64
+pca_channels: 128
+attention_impl: sdpa
+
+batch_size: 1024
+micro_batch_size: 128
+grad_accum_steps: 1
+num_steps: 250000
+warmup_steps: 5000
+learning_rate: 0.0004
+adam_beta2: 0.95
+weight_decay: 0.0
+max_grad_norm: 0.0
+ema_decay: 0.99995
+amp_dtype: bf16
+
+prediction: x
+t_sample_schedule: lognorm
+t_lognorm_mu: -0.8
+t_lognorm_sigma: 0.8
+label_drop_rate: 0.1
+noise_scale: 2.0
+n_T: 100
+cfg_scale: 2.0
+
+log_every: 100
+sample_every: 10000
+ckpt_every: 10000
+fid_every: 20000
+fid_num_samples: 30000
+fid_batch_size: 64

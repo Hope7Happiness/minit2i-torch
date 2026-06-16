@@ -1,0 +1,35 @@
+# Core training
+torch
+torchvision
+numpy
+scipy
+pyyaml
+tqdm
+transformers
+wandb
+diffusers
+safetensors
+peft==0.11.1
+
+# Data loading
+webdataset
+datasets
+huggingface_hub
+pyarrow
+
+# Image processing
+pillow==12.2.0
+
+# Evaluation: GenEval
+accelerate
+clip-benchmark
+mmdet
+mmcv
+open_clip_torch
+pandas
+
+# Evaluation: DPG-Bench
+modelscope
+
+# Evaluation: FID
+pytorch-fid
