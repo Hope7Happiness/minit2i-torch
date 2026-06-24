@@ -293,13 +293,13 @@ python tools/cc12m_wds_to_chunks.py \
   --out "$DATA_ROOT/cc12m_tensor_chunks"
 ```
 
-**120K mix.** Fine-tuning uses the 120K mix WebDataset layout assembled from three public shards:
+**120K mix.** Fine-tuning uses the 120K mix WebDataset layout assembled from three public sources:
 
 - [`BLIP3o/BLIP3o-60k`](https://huggingface.co/datasets/BLIP3o/BLIP3o-60k)
-- [`CaptionEmporium/dalle3-llama3.2-11b`](https://huggingface.co/datasets/CaptionEmporium/dalle3-llama3.2-11b)
+- [`OpenDatasets/dalle-3-dataset`](https://huggingface.co/datasets/OpenDatasets/dalle-3-dataset)
 - [`FreedomIntelligence/ShareGPT-4o-Image`](https://huggingface.co/datasets/FreedomIntelligence/ShareGPT-4o-Image)
 
-Stage the shards into the directory structure expected by `configs/finetune.yml`:
+Stage the sources into the directory structure expected by `configs/finetune.yml`:
 
 ```bash
 python tools/prepare_120k_mix_layout.py \
@@ -385,7 +385,7 @@ This codebase builds on a number of open-source efforts:
 - [`djghosh13/geneval`](https://github.com/djghosh13/geneval) -- prompts and detector checkpoints for GenEval.
 - [`Jialuo21/DPG-Bench`](https://huggingface.co/datasets/Jialuo21/DPG-Bench) and the mPLUG VQA model from ModelScope -- DPG-Bench evaluation.
 - [`pytorch-fid`](https://github.com/mseitzer/pytorch-fid) -- InceptionV3 FID feature extraction.
-- Public training data from [`CaptionEmporium/conceptual-captions-cc12m-llavanext`](https://huggingface.co/datasets/CaptionEmporium/conceptual-captions-cc12m-llavanext), [`BLIP3o/BLIP3o-60k`](https://huggingface.co/datasets/BLIP3o/BLIP3o-60k), [`CaptionEmporium/dalle3-llama3.2-11b`](https://huggingface.co/datasets/CaptionEmporium/dalle3-llama3.2-11b), [`FreedomIntelligence/ShareGPT-4o-Image`](https://huggingface.co/datasets/FreedomIntelligence/ShareGPT-4o-Image), and [`lambdalabs/naruto-blip-captions`](https://huggingface.co/datasets/lambdalabs/naruto-blip-captions).
+- Public training data from [`CaptionEmporium/conceptual-captions-cc12m-llavanext`](https://huggingface.co/datasets/CaptionEmporium/conceptual-captions-cc12m-llavanext), [`BLIP3o/BLIP3o-60k`](https://huggingface.co/datasets/BLIP3o/BLIP3o-60k), [`OpenDatasets/dalle-3-dataset`](https://huggingface.co/datasets/OpenDatasets/dalle-3-dataset), [`FreedomIntelligence/ShareGPT-4o-Image`](https://huggingface.co/datasets/FreedomIntelligence/ShareGPT-4o-Image), and [`lambdalabs/naruto-blip-captions`](https://huggingface.co/datasets/lambdalabs/naruto-blip-captions).
 
 ## Citation
 
